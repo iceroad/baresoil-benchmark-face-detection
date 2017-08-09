@@ -10,7 +10,8 @@ const _ = require('lodash'),
 global.WebSocket = require('ws');
 
 const BS_CLIENT = new BaresoilClient({
-  endpoint: 'ws://null.baresoil.io:8086/__bs__/live',
+  //endpoint: 'ws://null.baresoil.io:8086/__bs__/live',
+  endpoint: 'wss://faces.soilz.net/__bs__/live',
 });
 
 let NEXT_RPC_ID = 1;
