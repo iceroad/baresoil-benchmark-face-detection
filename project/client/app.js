@@ -3,7 +3,7 @@ $(document).ready(function main() {
 
   $('#file-upload-form').submit(function(evt) {
     // Retrieve DOM file element from selector.
-    const form = $(this);
+    const form = $('#file-upload-form');
     const file = $('#file-input')[0].files[0];
     if (!file) {
       $('#error-message').text('Please select a file.');

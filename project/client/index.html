@@ -15,6 +15,7 @@
 
           <h2 class="text-center">Face Detection API Demo</h2>
           <form
+              method="POST"
               id="file-upload-form"
               enctype="multipart/form-data">
             <div class="form-group">
@@ -27,10 +28,10 @@
                 class="form-control">
             </div>
             <div class="form-group">
-              <button
-                type="button"
+              <input
+                type="submit"
                 id="submit-image-button"
-                class="form-control btn btn-primary">Upload Image</button>
+                class="form-control btn btn-primary">
             </div>
             <p class="error text-danger" id="error-message"></p>
           </form>
