@@ -4,7 +4,7 @@ function genNginxclusterConfig(clusterConfig, serverConfig) {
   //
   // If TLS is clusterConfigured, then redirect all HTTP traffic on port 80 to HTTPS.
   //
-  let http80Block;
+  let http80Block = '';
   if (clusterConfig.tls.useTls) {
     // Forward port 80 -> port 443.
     http80Block = `
