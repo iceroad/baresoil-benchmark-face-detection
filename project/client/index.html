@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>baresoil project skeleton</title>
+    <title>Face and Facial Feature Detector API</title>
     <link rel="stylesheet" href="node_modules/bootswatch/spacelab/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -13,11 +13,9 @@
       <div class="row">
         <div class="col-xs-12 col-md-6 col-md-offset-3">
 
-          <h2>Face Detection API Demo</h2>
+          <h2 class="text-center">Face Detection API Demo</h2>
           <form
               id="file-upload-form"
-              action="/__bs__/post"
-              method="POST"
               enctype="multipart/form-data">
             <div class="form-group">
               <label>Select an image file with faces</label>
@@ -29,10 +27,10 @@
                 class="form-control">
             </div>
             <div class="form-group">
-              <input
-                type="submit"
+              <button
+                type="button"
                 id="submit-image-button"
-                class="form-control btn btn-primary">
+                class="form-control btn btn-primary">Upload Image</button>
             </div>
             <p class="error text-danger" id="error-message"></p>
           </form>
