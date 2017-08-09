@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>baresoil project skeleton</title>
+    <link rel="stylesheet" href="node_modules/bootswatch/spacelab/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+
+          <h2>Face Detection API Demo</h2>
+          <form
+              id="file-upload-form"
+              action="/__bs__/post"
+              method="POST"
+              enctype="multipart/form-data">
+            <div class="form-group">
+              <label>Select an image file with faces</label>
+              <input
+                type="file"
+                id="file-input"
+                name="photo"
+                accept="image/*"
+                class="form-control">
+            </div>
+            <div class="form-group">
+              <input
+                type="submit"
+                id="submit-image-button"
+                class="form-control btn btn-primary">
+            </div>
+            <p class="error text-danger" id="error-message"></p>
+          </form>
+
+          <div id="face-detect-results" class="text-center">
+            <h4>Results</h4>
+            <img id="face-detect-results-preview">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
