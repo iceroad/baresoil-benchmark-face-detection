@@ -1,0 +1,7 @@
+{
+  "runName": "t2.large",
+  "runDesc": "t2.large (2 instances)",
+  "numAgents": "10",
+  "warmup": 30000,
+  "steady": 180000
+}
