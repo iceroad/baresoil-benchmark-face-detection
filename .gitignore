@@ -1,0 +1,5 @@
+node_modules
+server/master-key
+server/master-key.pub
+server/terraform
+server/baresoil-server.conf.json
