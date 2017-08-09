@@ -5,3 +5,4 @@ server/master-key.pub
 server/terraform
 server/baresoil-server.conf.json
 server/config-*.json
+terraform
