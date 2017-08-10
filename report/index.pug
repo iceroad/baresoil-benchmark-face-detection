@@ -1,0 +1,54 @@
+include ./widgets.pug
+
+doctype html
+html(lang='en')
+  head
+    title Baresoil Face Detection Benchmark (AWS)
+    meta(charset='utf-8')
+    meta(name='description', content= extVariables.runDesc)
+    meta(name='last-modified', content= extVariables.runStartTime)
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+  body
+    div(class='container-fluid')
+      //-
+      //- TITLE
+      //-
+      include ./content/header.pug
+
+      //-
+      //- INTRODUCTION
+      //-
+      include ./content/intro.pug
+
+      //-
+      //- EXPERIMENT CONFIG
+      //-
+      include ./content/config.pug
+
+      //-
+      //- RESULTS
+      //-
+      include ./content/results.pug
+
+
+      //-
+      //- Crosslinks
+      //-
+      hr
+      div(class='row')
+        div(class='col-xs-12 col-md-offset-1 col-md-10')
+          table(class='links-box')
+            tr
+              td Homepage
+              td #[a(href='https://www.baresoil.org') www.baresoil.org]
+
+            tr
+              td Other benchmarks
+              td #[a(href='https://iceroad.github.io/baresoil-benchmark-image-resizer/') Image Resizing Benchmark]
+
+
+      //- FOOTER
+      hr
+      footer(class='footer').
+        Copyright &copy; 2017 #[a(href='http://lahiri.me/') Mayank Lahiri]
+

@@ -1,0 +1,18 @@
+{
+  "paths": {
+    "src": "report",
+    "dist": "docs"
+  },
+  "global": {
+    "styles": ["style/main.less"],
+    "scripts": ["app.js"]
+  },
+  "pages": [
+    {
+      "src": "index.pug",
+      "data": ["latest/composite.json"],
+      "scripts": ["latest/analysis.js"],
+      "dist": "index.html"
+    }
+  ]
+}

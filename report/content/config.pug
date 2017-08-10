@@ -1,0 +1,80 @@
+hr
+div(class='row')
+  div(class='col-xs-12 col-md-6 col-md-offset-1 bottom-spacer')
+    h3 Benchmark Setup
+    dl
+      dt Baresoil cluster
+      dd.
+        A Baresoil cluster is first created to
+        host the face recognition service using the instructions
+        for #[+ExtLinkOwned('https://www.baresoil.org/docs/install/aws.html', 'creating a Baresoil cluster on AWS')].
+        This can take 25 minutes or longer in some AWS regions.
+
+      dt Benchmarking client cluster
+      dd.
+        A standalone cluster of load-generating EC2  instances is created
+        using the #[+ExtLinkBenchoid] benchmarking tool, available on npm.
+
+
+      dt Load generating agents
+      dd
+        div.
+          Each of the #[strong= extVariables.client.instances.count]
+          servers in the test cluster creates #[strong= expConfig.numAgents] parallel processes
+          that each perform the following actions in a loop:
+        ol
+          li.
+            Connect to the face detection service over an encrypted, persistent
+            WebSocket using the Baresoil cluster's DNS endpoint,
+          li.
+            Randomly choose one of the
+            #[+ExtLinkOwned('https://github.com/iceroad/baresoil-benchmark-face-detection/tree/master/agent/test_images', 'test images')]
+            and send it to the server to be analyzed for faces.
+          li.
+            Wait for the server response before repeating the previous step.
+        div.
+          After a traffic ramp-up period, this results in
+          #[strong(class='format-number')= extVariables.client.instances.count * expConfig.numAgents]
+          simultaneous WebSocket connections to the cluster continuously
+          sending images to be analyzed. The source code for the load-generating
+          agent is in the
+          #[+ExtLinkOwned('https://github.com/iceroad/baresoil-benchmark-face-detection/tree/master/agent', 'agent')]
+          directory of the code and data repository.
+
+
+  div(class='col-xs-12 col-md-4 bottom-spacer')
+    h4 Baresoil Cluster
+    table(class='table table-compact metrics-table')
+      tr
+        td Instance count
+        td(class='metric')= extVariables.server.instances.count
+      tr
+        td Instance type
+        td(class='metric')= extVariables.server.instances.type
+      tr
+        td AWS region
+        td(class='metric')= extVariables.server.region
+      tr
+        td Instance cost per hour (on-demand)
+        td(class='metric')
+          span= '$' + extVariables.server.instances.costPerHour.retail
+          strong  USD
+      tr
+        td Instance cost per hour (reserved)
+        td(class='metric')
+          span= '$' + extVariables.server.instances.costPerHour.reserved
+          strong  USD
+
+
+  div(class='col-xs-12 col-md-4 bottom-spacer')
+    h4 Load Generating Instances
+    table(class='table table-compact metrics-table')
+      tr
+        td Instance count
+        td(class='metric')= extVariables.client.instances.count
+      tr
+        td Instance type
+        td(class='metric')= extVariables.client.instances.type
+      tr
+        td AWS region
+        td(class='metric')= extVariables.client.region
