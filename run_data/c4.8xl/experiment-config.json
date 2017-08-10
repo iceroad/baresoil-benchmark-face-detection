@@ -1,0 +1,7 @@
+{
+  "runName": "c4.8xl",
+  "runDesc": "c4.8xlarge (5 instances)",
+  "numAgents": "20",
+  "warmup": "60000",
+  "steady": "240000"
+}
