@@ -75,7 +75,10 @@ function RequestStats(rows) {
             label: '98th percentile server walltime per image (milliseconds)',
             data: [],
           },
-
+          {
+            label: '5th percentile server walltime per image (milliseconds)',
+            data: [],
+          },
         ],
       },
       options: chartutil.CreateTimeSeries(
@@ -126,9 +129,11 @@ function RequestStats(rows) {
     const walltimeMedian = walltimes[Math.floor(walltimes.length * 0.5)];
     const walltimePc95 = walltimes[Math.floor(walltimes.length * 0.95)];
     const walltimePc98 = walltimes[Math.floor(walltimes.length * 0.98)];
+    const walltimePc5 = walltimes[Math.floor(walltimes.length * 0.05)];
     outputs.serverWalltimePerImage.data.datasets[0].data.push(walltimeMedian);
     outputs.serverWalltimePerImage.data.datasets[1].data.push(walltimePc95);
     outputs.serverWalltimePerImage.data.datasets[2].data.push(walltimePc98);
+    outputs.serverWalltimePerImage.data.datasets[3].data.push(walltimePc5);
   });
 
   // Group and aggregate over "request_ok" only by the request end time.
