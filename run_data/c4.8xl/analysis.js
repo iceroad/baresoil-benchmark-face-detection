@@ -7,7 +7,7 @@ window.DATA = {
     "imgBytesRecv": 540711609,
     "imgBytesSent": 67406267535,
     "totalTimeSec": 357,
-    "totalCpuSeconds": 9199121,
+    "totalCpuSeconds": 9199.121000000045,
     "bottomLine": {
       "costPerHourRetail": "8.58",
       "costPerHourReserved": "5.66",
@@ -817,6 +817,23 @@ window.DATA = {
               929,
               929,
               929
+            ]
+          },
+          {
+            "label": "5th percentile server walltime per image (milliseconds)",
+            "data": [
+              736,
+              732,
+              712,
+              693,
+              693,
+              665,
+              693,
+              720,
+              718,
+              671,
+              671,
+              651
             ]
           }
         ]

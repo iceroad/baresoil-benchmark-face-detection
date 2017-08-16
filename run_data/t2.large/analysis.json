@@ -7,7 +7,7 @@
     "imgBytesRecv": 32699341,
     "imgBytesSent": 4080462643,
     "totalTimeSec": 236,
-    "totalCpuSeconds": 5077854,
+    "totalCpuSeconds": 5077.854000000003,
     "bottomLine": {
       "costPerHourRetail": "0.39",
       "costPerHourReserved": "0.31",
@@ -491,6 +491,19 @@
               9041,
               9041,
               8863
+            ]
+          },
+          {
+            "label": "5th percentile server walltime per image (milliseconds)",
+            "data": [
+              5699,
+              5585,
+              5585,
+              5699,
+              6378,
+              6378,
+              6378,
+              5513
             ]
           }
         ]
